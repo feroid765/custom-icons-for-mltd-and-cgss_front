@@ -4,6 +4,7 @@ import {Header, Menu} from 'semantic-ui-react';
 
 function App() {
   const [type, setType] = useState('cgss');
+  const handleChange = (e, {name}) => setType(name);
 
   return (
     <div className="App">
@@ -15,13 +16,13 @@ function App() {
           name = 'cgss'
           content = '데레스테'
           active = {type === 'cgss'}
-          onClick = {setType('cgss')}
+          onClick = {handleChange}
         />
         <Menu.Item
           name = 'mltd'
           content = '밀리시타'
           active = {type === 'mltd'}
-          onClick = {setType('mltd')}
+          onClick = {handleChange}
         />
       </Menu>
       

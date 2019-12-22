@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, Image, Button, Pagination} from 'semantic-ui-react';
 import './IdolIconList.css';
 
@@ -23,26 +23,23 @@ function idolIcon(k){
     )
 }
 
-class idolIconList extends React.Component{
-    state = {
-        activePage : 1
-    };
-    
-    handlePaginationChange = (e, {activePage}) => this.setState({activePage});
+function idolIconList(iconkeylist){
+    const [activePage, setActivePage] = useState(1);
+    const handleChange = (e, {activePage}) => setActivePage(activePage);
 
-    render() {
-        if(this.props.iconkeylist) return (
+    if(iconkeylist){
+        return (
             <div>
                 <Card.Group itemsPerRow = {6} doubling>
-                    { this.props.iconkeylist.slice((this.state.activePage-1)*12, (this.state.activePage)*12).map(k => idolIcon(k)) }
+                    {iconkeylist.slice((activePage-1)*12, activePage*12).map(k => idolIcon(k)) }
                 </Card.Group>
                 <br/>
-                <Pagination defaultActivePage = {1} boundaryRange = {0} totalPages = {Math.ceil(this.props.iconkeylist.length/12)} 
-                onPageChange = {this.handlePaginationChange}/>
+                <Pagination defaultActivePage = {1} boundaryRange = {0} totalPages = {Math.ceil(iconkeylist.length/12)} 
+                onPageChange = {handleChange}/>
             </div>
         );
-        else return null;
     }
+    else return null;
 }
 
 export default idolIconList;
