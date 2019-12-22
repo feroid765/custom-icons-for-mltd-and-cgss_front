@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Header, Menu} from 'semantic-ui-react';
 
 function App() {
+  const [type, setType] = useState('cgss');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header as='h1'>
+        데레스테/밀리시타 아이콘 생성기
+      </Header>
+      <Menu compact>
+        <Menu.Item
+          name = 'cgss'
+          content = '데레스테'
+          active = {type === 'cgss'}
+          onClick = {setType('cgss')}
+        />
+        <Menu.Item
+          name = 'mltd'
+          content = '밀리시타'
+          active = {type === 'mltd'}
+          onClick = {setType('mltd')}
+        />
+      </Menu>
+      
     </div>
   );
 }
