@@ -43,6 +43,7 @@ class App extends React.Component {
       console.log(wholeList);
       this.setState(
         {keyCardList : wholeList,
+        iconList : [],
         loaded : true});
     }
   }
