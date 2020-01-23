@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Header, Menu, Input, Loader, Segment, Image} from 'semantic-ui-react';
+import {Header, Menu, Input, Loader, Segment, Container} from 'semantic-ui-react';
 import IdolIconList from './IdolIconList';
 import cgssKeyKor from './cgssKeyKor.json';
 import mltdKeyKor from './mltdKeyKor.json';
@@ -106,7 +106,7 @@ class App extends React.Component {
 
   render() {return (
     <div className="App">
-      <Header as='h1'>
+      <Header as='h2'>
         데레스테/밀리시타 아이콘 생성기
       </Header>
       <Menu compact pointing secondary>
@@ -128,6 +128,13 @@ class App extends React.Component {
         </Menu.Item>
       </Menu>
       {this.initMainScreen()}
+      <footer>
+        <Container textAlign = "center">
+          데레스테 정보와 아이콘은 <a href = "https://starlight.kirara.ca" target="_blank">starlight.kirara.ca</a>에서 받아오고 있습니다.<br/>
+          밀리시타 정보와 아이콘은 <a href = "https://matsurihi.me" target="_blank">matsurihi.me</a>에서 받아오고 있습니다.<br/>
+          만든 사람 :  고철안드로이드 (<a href = "https://twitter.com/feroid765" target="_blank">@feroid765</a>)<br/>
+        </Container>
+      </footer>
     </div>
   );}
 }
