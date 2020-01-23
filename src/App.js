@@ -31,7 +31,7 @@ class App extends React.Component {
         }
       }
       else if(this.state.type === 'mltd'){
-        var res = await fetch('https://api.matsurihi.me/mltd/v1/cards');
+        var res = await fetch('https://api.matsurihi.me/mltd/v1/cards?prettyPrint=false');
         var result = await res.json();
         for(var i=0; i<result.length; i++){
           const {idolId, resourceId} = result[i];
