@@ -49,19 +49,31 @@ class App extends React.Component {
                 <footer>
                     <Container textAlign="center">
                         데레스테 정보와 아이콘은{" "}
-                        <a href="https://starlight.kirara.ca" target="_blank">
+                        <a
+                            href="https://starlight.kirara.ca"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             starlight.kirara.ca
                         </a>
                         에서 받아오고 있습니다.
                         <br />
                         밀리시타 정보와 아이콘은{" "}
-                        <a href="https://matsurihi.me" target="_blank">
+                        <a
+                            href="https://matsurihi.me"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             matsurihi.me
                         </a>
                         에서 받아오고 있습니다.
                         <br />
                         만든 사람 : 고철안드로이드 (
-                        <a href="https://twitter.com/feroid765" target="_blank">
+                        <a
+                            href="https://twitter.com/feroid765"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             @feroid765
                         </a>
                         )<br />
