@@ -58,7 +58,7 @@ class App extends React.Component {
                         </a>
                         에서 받아오고 있습니다.
                         <br />
-                        밀리시타 정보와 아이콘은{" "}
+                        밀리시타 정보는{" "}
                         <a
                             href="https://matsurihi.me"
                             target="_blank"
@@ -66,7 +66,8 @@ class App extends React.Component {
                         >
                             matsurihi.me
                         </a>
-                        에서 받아오고 있습니다.
+                        에서 받아오고 있고, 이미지도 동 사이트에서 미러링 하고
+                        있습니다.
                         <br />
                         만든 사람 : 고철안드로이드 (
                         <a
