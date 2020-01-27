@@ -69,6 +69,24 @@ class App extends React.Component {
                         에서 받아오고 있고, 이미지도 동 사이트에서 미러링 하고
                         있습니다.
                         <br />
+                        <a
+                            href="https://matsurihi.me"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            matsurihi.me
+                        </a>
+                        에서 받아오고 있고, 이미지도 동 사이트에서 미러링 하고
+                        있습니다.
+                        <br />
+                        밀리시타 아이돌 검색기능을 이용할 때 matsurihi.me의
+                        API를 사용하는데 이 때 matsurihi.me에서 사용자의 IP주소,
+                        에이전트, 쿠키 등을 수집하고 있습니다. <br />
+                        자세한 내용은{" "}
+                        <a href="https://www.matsurihi.me/privacy.html">
+                            matsurihi.me의 개인정보 보호 정책
+                        </a>
+                        을 참고해주세요. <br />
                         만든 사람 : 고철안드로이드 (
                         <a
                             href="https://twitter.com/feroid765"
