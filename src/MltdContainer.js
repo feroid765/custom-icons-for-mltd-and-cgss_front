@@ -33,7 +33,45 @@ class MltdContainer extends React.Component {
             );
     }
 
-    async componentDidUpdate() {
+    async handleFetch(tmpValue) {
+        if (tmpValue === this.state.inputValue) {
+            var kors = Object.values(mltdKeyKor);
+            var keys = Object.keys(mltdKeyKor);
+            var baseURL =
+                "https://api.matsurihi.me/mltd/v1/cards?prettyPrint=false&idolId=";
+            var doFetch = false;
+            for (var i = 0; i < kors.length; i++) {
+                if (kors[i].includes(tmpValue)) {
+                    baseURL += keys[i] + ",";
+                    doFetch = true;
+                }
+            }
+            if (doFetch && tmpValue === this.state.inputValue) {
+                var result = [];
+                var res = await fetch(baseURL.substring(0, baseURL.length - 1));
+                res = await res.json();
+                for (var i = 0; i < res.length; i++) {
+                    result = result.concat([
+                        res[i]["resourceId"] + "_0.png",
+                        res[i]["resourceId"] + "_1.png"
+                    ]);
+                }
+                if (tmpValue === this.state.inputValue) {
+                    this.setState({
+                        loaded: true,
+                        iconList: result
+                    });
+                }
+            } else if (tmpValue === this.state.inputValue) {
+                this.setState({
+                    loaded: true,
+                    iconList: []
+                });
+            }
+        }
+    }
+
+    componentDidUpdate() {
         var tmpValue = this.state.inputValue;
         if (!this.state.loaded) {
             if (tmpValue === "")
@@ -42,43 +80,7 @@ class MltdContainer extends React.Component {
                     loaded: true
                 });
             else {
-                if (tmpValue === this.state.inputValue) {
-                    var kors = Object.values(mltdKeyKor);
-                    var keys = Object.keys(mltdKeyKor);
-                    var baseURL =
-                        "https://api.matsurihi.me/mltd/v1/cards?prettyPrint=false&idolId=";
-                    var doFetch = false;
-                    for (var i = 0; i < kors.length; i++) {
-                        if (kors[i].includes(tmpValue)) {
-                            baseURL += keys[i] + ",";
-                            doFetch = true;
-                        }
-                    }
-                    if (doFetch && tmpValue === this.state.inputValue) {
-                        var result = [];
-                        var res = await fetch(
-                            baseURL.substring(0, baseURL.length - 1)
-                        );
-                        res = await res.json();
-                        for (var i = 0; i < res.length; i++) {
-                            result = result.concat([
-                                res[i]["resourceId"] + "_0.png",
-                                res[i]["resourceId"] + "_1.png"
-                            ]);
-                        }
-                        if (tmpValue === this.state.inputValue) {
-                            this.setState({
-                                loaded: true,
-                                iconList: result
-                            });
-                        }
-                    } else if (tmpValue === this.state.inputValue) {
-                        this.setState({
-                            loaded: true,
-                            iconList: []
-                        });
-                    }
-                }
+                window.setTimeout(() => this.handleFetch(tmpValue), 500);
             }
         }
     }
