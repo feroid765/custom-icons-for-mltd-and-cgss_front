@@ -19,3 +19,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+The copyright to THE IDOLM@STER contents belongs to BANDAI NAMCO Entertainment Inc.
+~~~
+public/
+-------logo192.png
+-------favicon.ico
+src/
+-------cgssKeyKor.json
+-------mltdKeyKor.json
+-------symbol_cgss.png
+-------symbol_mltd.png
+
+Images fetched from starlight.kirara.ca
+~~~

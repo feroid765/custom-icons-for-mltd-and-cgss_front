@@ -76,7 +76,9 @@ class App extends React.Component {
                         <a href="https://www.matsurihi.me/privacy.html">
                             matsurihi.me의 개인정보 보호 정책
                         </a>
-                        을 참고해주세요. <br />
+                        을 참고해주세요. <br />이 사이트에서 사용된
+                        아이돌마스터의 캐릭터 이름과 이미지에 대한 권리는 BANDAI
+                        NAMCO Entertainment Inc.에게 있습니다. <br />
                         만든 사람 : 고철안드로이드 (
                         <a
                             href="https://twitter.com/feroid765"
